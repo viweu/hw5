@@ -1,0 +1,8 @@
+package genealogyt tree.view;
+
+import genealogyt tree.model.Person;
+
+public interface GenealogicalTreeView {
+
+    void setPeople(List<Person> people);
+}
