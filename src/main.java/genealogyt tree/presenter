@@ -1,0 +1,35 @@
+package genealogyt tree.presenter;
+
+import genealogyt tree.model.GenealogicalTreeModel;
+import genealogyt tree.view.GenealogicalTreeView;
+
+public class GenealogicalTreePresenter {
+
+    private GenealogicalTreeModel model;
+    private GenealogicalTreeView view;
+
+    public GenealogicalTreePresenter(GenealogicalTreeModel model, GenealogicalTreeView view) {
+        this.model = model;
+        this.view = view;
+    }
+
+    public void loadPeople() {
+        List<Person> people = model.getPeople();
+        view.setPeople(people);
+    }
+
+    public void sortBy(Comparator<Person> comparator) {
+        model.sortBy(comparator);
+        loadPeople();
+    }
+
+    public void sortByName() {
+        model.sortByName();
+        loadPeople();
+    }
+
+    public void sortByBirthdate() {
+        model.sortByBirthdate();
+        loadPeople();
+    }
+}
